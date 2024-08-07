@@ -65,9 +65,12 @@ const FAQSection = () => {
       <div className="mb-4 text-2xl font-bold text-center title animation active">
         Frequently Asked Questions
       </div>
-      <div className="mb-8 text-center description animation active">
-        Find the answers to the most common questions about our product. Feel free to email us if you still couldn't find what you were looking for.
-      </div>
+      <div className="px-4 mb-8 text-center description animation active sm:px-10 lg:px-0">
+  Find the answers to the most common questions about our product. Feel free to email us if you still couldn't find what you were looking for.
+</div>
+
+
+
       <div className="grid w-full gap-3 p-4 sm:px-20">
         {faqs.map((faq, index) => (
           <div key={index} className="border-b active">

@@ -8,7 +8,7 @@ import mobi from '../images/mobi.png';
 
 const Feature = ({ image, title, description, index }) => (
   <motion.div
-    className={`feature animation flex flex-col md:flex-row items-center`}
+    className={`feature animation flex flex-col md:flex-row items-center mb-8`} // Added margin-bottom for spacing
     initial={{ opacity: 0, y: 150 }} // Initial state for animation
     whileInView={{ opacity: 1, y: 0 }} // State when in view
     transition={{ duration: 0.5 }} // Transition duration
@@ -72,7 +72,7 @@ const Features = () => {
 
   return (
     <section className="py-16 text-black features section-features">
-      <div className="container px-4 mx-auto features__list">
+      <div className="container px-4 mx-auto lg:py features__list sm:py-20 lg:py-0">
         <div className="space-y-16">
           {features.map((feature, index) => (
             <Feature
