@@ -136,7 +136,7 @@ const Footerhome = () => {
             
             <div className="flex justify-center order-3 mb-4 sm:mb-0">
               <a
-                href="#"
+                href="https://www.facebook.com/people/Tango-Africa/61561703523510/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mx-2"

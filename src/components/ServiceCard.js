@@ -136,7 +136,7 @@ const Services = () => {
           schedules, access detailed analytics, and stay updated with real-time
           notifications. Creating memorable experiences has never been easier.
         </p>
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
             <ServiceCard key={index} {...service} />
           ))}

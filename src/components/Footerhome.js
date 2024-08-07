@@ -100,7 +100,7 @@ const Footerhome = () => {
             </a>
           </div>
             <div className="flex justify-center order-3 mb-4 sm:mb-0">
-              <a href="#" target="_blank" rel="noopener noreferrer" className="mx-2">
+              <a href="https://www.facebook.com/people/Tango-Africa/61561703523510/" target="_blank" rel="noopener noreferrer" className="mx-2">
                 <FontAwesomeIcon icon={faFacebookF} className="text-xl text-blue-600 hover:text-blue-700" />
               </a>
               <a href="#" target="_blank" rel="noopener noreferrer" className="mx-2">

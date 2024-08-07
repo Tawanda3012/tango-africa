@@ -50,21 +50,21 @@ const Header = () => {
           {navItems.map((item, index) => (
             item.name === 'Organisers' && location.pathname === '/organisers' ? (
               <a
-              key={index}
-              href="https://app.tango.co.zw/" 
-              target="_blank" // Opens in a new tab
-              rel="noopener noreferrer" // Security best practice
-              className="bg-[#147481] text-white px-4 py-2 rounded hover:bg-[#106370] transition-colors duration-300"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Get Started
-            </a>
+                key={index}
+                href="https://app.tango.co.zw/" 
+                target="_blank" // Opens in a new tab
+                rel="noopener noreferrer" // Security best practice
+                className="bg-[#147481] text-white px-4 py-2 rounded hover:bg-[#106370] transition-colors duration-300"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Get Started
+              </a>
             ) : (
               <NavLink 
                 key={index} 
                 to={item.path}
                 className={({ isActive }) => 
-                  `cursor-pointer ${isActive ? 'text-[#147481]' : 'hover:text-blue-600'}`
+                  `cursor-pointer ${location.pathname === item.path || (item.path.startsWith('#') && location.hash === item.path) ? 'text-[#147481] font-bold' : 'hover:text-blue-600'}`
                 }
                 onClick={() => {
                   if (item.name !== 'Home' && item.name !== 'Organisers') {

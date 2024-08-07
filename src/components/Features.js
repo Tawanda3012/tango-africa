@@ -30,7 +30,7 @@ const Feature = ({ image, title, description, index }) => (
         />
       </div>
     </div>
-    <div className="flex flex-col items-start justify-center w-full text-left feature__content md:w-2/3 md:pl-8">
+    <div className="flex flex-col w-full text-center feature__content md:w-2/3 md:pl-8 md:text-left">
       <h3 className="mb-2 text-2xl font-bold feature__title">
         <span className="text-black">{title.split(' ')[0]} </span>
         {title.split(' ').slice(1, -2).join(' ')}
