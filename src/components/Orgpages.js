@@ -16,12 +16,12 @@ function Orgpages() {
             </p>
             <div className="button__app">
               <a
-                href="https://app.tango.co.zw"
+                href="https://app.tango.co.zw/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block px-6 py-3 text-lg font-semibold text-white transition duration-300 ease-in-out bg-[#147481] rounded-lg hover:bg-blue-700"
               >
-                Try the app
+                Get Started
               </a>
             </div>
           </div>

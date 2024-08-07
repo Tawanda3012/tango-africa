@@ -9,7 +9,7 @@ import Footer from "../components/Footer";
 
 function Organisers() {
   return (
-    <div className="mt-20 overflow-x-hidden lg:px-40" >
+    <div className="mt-20 overflow-x-hidden lg:px-40 " >
       <Orgpages />
       <Services/>
       <Partners/>
@@ -17,7 +17,7 @@ function Organisers() {
       <FAQSection/>
       {/* <ContactPage/>
        */}
-       <FAQSection/>
+       
        <Footer/>
     </div>
   );

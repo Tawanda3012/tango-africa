@@ -11,7 +11,7 @@ import Footerhome from '../components/Footerhome'
 function Home() {
   return (
     <div className='overflow-x-auto bg-gray-100' >
-      <main className='px-4 mt-10 lg:px-40 sm:px-20'>
+      <main className='px-4 lg:px-40 sm:px-20'>
         <Hero/>
         <TrendingEvents/>
         <Features/>

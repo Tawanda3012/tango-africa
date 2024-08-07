@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 
 const Header = () => {  
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,16 +46,26 @@ const Header = () => {
       } md:relative md:translate-x-0 md:w-auto md:bg-transparent md:shadow-none md:h-auto`}>
         <nav className="flex flex-col p-4 space-y-4 md:flex-row md:space-y-0 md:space-x-4 md:p-0">
           {navItems.map((item, index) => (
-            <NavLink 
-              key={index} 
-              to={item.path}
-              className={({ isActive }) => 
-                `cursor-pointer ${isActive ? 'text-[#147481]' : 'hover:text-blue-600'}`
-              }
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {item.name}
-            </NavLink>
+            item.name === 'Organisers' && location.pathname === '/organisers' ? (
+              <button
+                key={index}
+                className="bg-[#147481] text-white px-4 py-2 rounded hover:bg-[#106370] transition-colors duration-300"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Get Started
+              </button>
+            ) : (
+              <NavLink 
+                key={index} 
+                to={item.path}
+                className={({ isActive }) => 
+                  `cursor-pointer ${isActive ? 'text-[#147481]' : 'hover:text-blue-600'}`
+                }
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {item.name}
+              </NavLink>
+            )
           ))}
         </nav>
       </div>

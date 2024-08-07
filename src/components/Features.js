@@ -1,8 +1,11 @@
 import React from 'react';
-import { motion } from 'framer-motion'; // Import motion from framer-motion
+import { motion } from 'framer-motion'; 
+import image1 from '../images/removed.jpeg.png'; 
+import events from '../images/events.png';
+import trend from '../images/trend.png';
+import search from '../images/search.png';
+import mobi from '../images/mobi.png'
 
-// Import images directly from the src folder
-import image1 from '../images/removed.jpeg.png'; // Adjust the path based on your folder structure
 
 
 const Feature = ({ image, title, description, index }) => (
@@ -33,7 +36,7 @@ const Feature = ({ image, title, description, index }) => (
     <h3 className="mb-2 text-2xl font-bold feature__title">
   <span className="text-black">{title.split(' ')[0]} </span>
   {title.split(' ').slice(1, -2).join(' ')}
-  <span className="text-[#147481]"> {title.split(' ').slice(-2).join(' ')}</span>
+  <span className="text-[#147481]"> {title.split(' ').slice(-3).join(' ')}</span>
 </h3>
       <p className="text-gray-600 text-balck feature__description">{description}</p>
     </div>
@@ -43,22 +46,22 @@ const Feature = ({ image, title, description, index }) => (
 const Features = () => {
   const features = [
     {
-      image: image1,
+      image: mobi,
       title: "Don't miss out on any events that others also want to attend",
       description: "Stay updated on the events that others want to attend as well. We will show you all the hottest events that are coming up."
     },
     {
-      image: image1,
+      image: trend,
       title: "Find out more about the event",
       description: "You have the luxury of checking whether this event is really for you or not. After that, it is anyone's guess."
     },
     {
-      image: image1,
+      image: search,
       title: "Keep tickets with ease everywhere and anywhere",
       description: "Have as many tickets as you want, for however many events you want with you always. Digital tickets make it easy to go around. Bonus, they don't get misplaced."
     },
     {
-      image: image1,
+      image: events,
       title: "Categorisation that makes it easy to find events",
       description: "Choose an event from the wide variety of categories. Don't waste time, just look through your event type."
     },
