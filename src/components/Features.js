@@ -4,9 +4,7 @@ import image1 from '../images/removed.jpeg.png';
 import events from '../images/events.png';
 import trend from '../images/trend.png';
 import search from '../images/search.png';
-import mobi from '../images/mobi.png'
-
-
+import mobi from '../images/mobi.png';
 
 const Feature = ({ image, title, description, index }) => (
   <motion.div
@@ -16,29 +14,29 @@ const Feature = ({ image, title, description, index }) => (
     transition={{ duration: 0.5 }} // Transition duration
     viewport={{ once: false }} // Animation will trigger each time it comes into view
   >
-     <div className={`feature__image w-full mb-4 md:mb-0 ${index % 2 === 0 ? 'md:w-1/3' : 'md:w-1/3 md:order-last'} group`}>
-      <div className="relative w-full h-[300px]">
+    <div className={`feature__image w-full mb-4 md:mb-0 ${index % 2 === 0 ? 'md:w-1/3' : 'md:w-1/3 md:order-last'} group`}>
+      <div className="relative w-full h-[300px] flex justify-center items-center">
         {/* Orange glow effect */}
-        <div className="absolute inset-0 bg-[#dfe4b8]  opacity-50 filter blur-3xl"></div>
+        <div className="absolute inset-0 bg-[#dfe4b8] opacity-50 filter blur-3xl"></div>
         
         {/* Centered teal background */}
-        <div className="absolute top-1/2 sm:right-[13px] right-[5px]  transform -translate-x-1/2 -translate-y-1/2 transition-all duration-300 bg-[#147481] opacity-75 group-hover:opacity-100 h-[190px] w-[190px] flex justify-center items-center z-10 rounded-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 transition-all duration-300 bg-[#147481] opacity-75 group-hover:opacity-100 h-[190px] w-[190px] flex justify-center items-center rounded-3xl z-10"></div>
         
         {/* Image */}
         <img 
           src={image} 
           alt="" 
-          className="absolute bottom-0 left-[calc(50%-98px)] h-full object-cover transform group-hover:scale-105 transition-transform duration-300 z-20"
+          className="absolute bottom-0 left-[50%] transform -translate-x-1/2 h-full object-cover transition-transform duration-300 group-hover:scale-105 z-20"
         />
       </div>
     </div>
     <div className="flex flex-col items-start justify-center w-full text-left feature__content md:w-2/3 md:pl-8">
-    <h3 className="mb-2 text-2xl font-bold feature__title">
-  <span className="text-black">{title.split(' ')[0]} </span>
-  {title.split(' ').slice(1, -2).join(' ')}
-  <span className="text-[#147481]"> {title.split(' ').slice(-3).join(' ')}</span>
-</h3>
-      <p className="text-gray-600 text-balck feature__description">{description}</p>
+      <h3 className="mb-2 text-2xl font-bold feature__title">
+        <span className="text-black">{title.split(' ')[0]} </span>
+        {title.split(' ').slice(1, -2).join(' ')}
+        <span className="text-[#147481]"> {title.split(' ').slice(-3).join(' ')}</span>
+      </h3>
+      <p className="text-black text-gray-600 feature__description">{description}</p>
     </div>
   </motion.div>
 );
@@ -73,7 +71,7 @@ const Features = () => {
   ];
 
   return (
-    <section className="py-16 text-black eatures section-features">
+    <section className="py-16 text-black features section-features">
       <div className="container px-4 mx-auto features__list">
         <div className="space-y-16">
           {features.map((feature, index) => (

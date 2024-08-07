@@ -9,22 +9,38 @@ function Home() {
   return (
     <div className='overflow-x-auto bg-gray-100'>
       <main className='px-4 mt-10 lg:px-40 sm:px-20'>
-        <section id="hero">
+        <div id="hero">
           <Hero />
-        </section>
-        <section id="trending-events">
+        </div>
+        <div id="trending-events" className="section-full">
           <TrendingEvents />
-        </section>
-        <section id="features">
+        </div>
+        <div id="features">
           <Features />
-        </section>
-        <section id="faq">
+        </div>
+        <div id="faq" className="section-full">
           <FAQ />
-        </section>
-        <section id="footerhome">
+        </div>
+        <div id="footer">
           <Footerhome />
-        </section>
+        </div>
       </main>
+      
+      <style jsx>{`
+        .section-full {
+          height: 100vh; /* Full viewport height on desktop */
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        @media (max-width: 768px) {
+          .section-full {
+            height: auto; /* Normal height on mobile */
+            display: block; /* Stack elements normally */
+          }
+        }
+      `}</style>
     </div>
   );
 }

@@ -1,34 +1,18 @@
-// Header.js
 import React, { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 
-const Header = () => {
+const Header = () => {  
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
-  const [activeSection, setActiveSection] = useState('Home');
   const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
       setIsSticky(window.scrollY > 0);
-
-      // Determine which section is currently in view
-      const sections = ['hero', 'trending-events', 'features', 'faq', 'footerhome'];
-      const scrollPosition = window.scrollY + window.innerHeight / 2; // Middle of the viewport
-
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const { offsetTop, clientHeight } = element;
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + clientHeight) {
-            setActiveSection(section.replace('-', ' ')); // Update active section
-            break;
-          }
-        }
-      }
     };
 
     window.addEventListener('scroll', handleScroll);
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
@@ -43,27 +27,25 @@ const Header = () => {
     { name: 'Organisers', path: '/organisers' }
   ];
 
-  const handleLinkClick = (name, path) => {
-    if (path.startsWith('#')) {
+  const handleLinkClick = (path) => {
+    if (path.startsWith('#') && path !== '#') {
       const targetElement = document.querySelector(path);
       if (targetElement) {
         targetElement.scrollIntoView({ behavior: 'smooth' });
       }
-    } else if (name === 'Home') {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
     setIsMenuOpen(false);
   };
 
   return (
-    <header className={`flex items-center justify-between p-4 white lg:px-40 ${isSticky ? 'fixed top-0 left-0 right-0 bg-white shadow-md z-50' : ''}`}>
+    <header className={`flex items-center justify-between p-4 lg:px-40 ${isSticky ? 'fixed top-0 left-0 right-0 bg-white shadow-md z-50' : ''}`}>
       <div className="header__logo">
         <Link to="/" className="text-xl font-bold">
           <p>Tango Africa</p>
         </Link>
       </div>
 
-      <div className={`header__nav users fixed top-0 left-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'} md:relative md:translate-x-0 md:w-auto md:bg-transparent md:shadow-none md:h-auto`}>
+      <div className={`header__nav fixed top-0 left-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'} md:relative md:translate-x-0 md:w-auto md:bg-transparent md:shadow-none md:h-auto`}>
         <nav className="flex flex-col p-4 space-y-4 md:flex-row md:space-y-0 md:space-x-4 md:p-0">
           {navItems.map((item, index) => (
             item.name === 'Organisers' && location.pathname === '/organisers' ? (
@@ -78,8 +60,16 @@ const Header = () => {
               <NavLink 
                 key={index} 
                 to={item.path}
-                className={`cursor-pointer ${activeSection.toLowerCase() === item.name.toLowerCase() ? 'text-[#147481]' : 'hover:text-blue-600'}`}
-                onClick={() => handleLinkClick(item.name, item.path)}
+                className={({ isActive }) => 
+                  `cursor-pointer ${isActive ? 'text-[#147481]' : 'hover:text-blue-600'}`
+                }
+                onClick={() => {
+                  if (item.name !== 'Home' && item.name !== 'Organisers') {
+                    handleLinkClick(item.path);
+                  } else {
+                    setIsMenuOpen(false);
+                  }
+                }}
               >
                 {item.name}
               </NavLink>
@@ -89,7 +79,14 @@ const Header = () => {
       </div>
 
       <div className="header__bars md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-        <svg className="w-6 h-6" stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+        <svg 
+          className="w-6 h-6"
+          stroke="currentColor" 
+          fill="currentColor" 
+          strokeWidth="0" 
+          viewBox="0 0 448 512" 
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"></path>
         </svg>
       </div>
