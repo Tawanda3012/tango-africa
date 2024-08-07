@@ -56,8 +56,10 @@ const Services = () => {
           viewBox="0 0 16 16"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm0 1a7 7 0 1 1 0 14A7 7 0 0 1 8 1z" />
-          <path d="M8 4a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm0 3a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm0 3a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+          <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2zm0 1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3z" />
+          <path d="M4 3h8v1H4V3zm0 2h8v1H4V5zm0 2h8v1H4V7zm0 2h8v1H4V9zm0 2h8v1H4v-1z" />
+
+
         </svg>
       ),
       title: "Contact Book",
@@ -75,8 +77,8 @@ const Services = () => {
           viewBox="0 0 16 16"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm0 1a7 7 0 1 1 0 14A7 7 0 0 1 8 1z" />
-          <path d="M11 8a1 1 0 0 0-1-1H6a1 1 0 0 0 0 2h4a1 1 0 0 0 1-1z" />
+  <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2zm0 1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3z" />
+  <path d="M4 5h8v1H4V5zm0 2h8v1H4V7zm0 2h8v1H4V9zm0 2h5v1H4v-1z" />
         </svg>
       ),
       title: "Payments",
@@ -93,8 +95,7 @@ const Services = () => {
           viewBox="0 0 16 16"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm0 1a7 7 0 1 1 0 14A7 7 0 0 1 8 1z" />
-          <path d="M5.5 4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-5z" />
+         <path d="M1.5 3A1.5 1.5 0 0 0 0 4.5V6a.5.5 0 0 0 .5.5 1.5 1.5 0 1 1 0 3 .5.5 0 0 0-.5.5v1.5A1.5 1.5 0 0 0 1.5 13h13a1.5 1.5 0 0 0 1.5-1.5V10a.5.5 0 0 0-.5-.5 1.5 1.5 0 0 1 0-3A.5.5 0 0 0 16 6V4.5A1.5 1.5 0 0 0 14.5 3zM1 4.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 .5.5v1.05a2.5 2.5 0 0 0 0 4.9v1.05a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-1.05a2.5 2.5 0 0 0 0-4.9z"></path>
         </svg>
       ),
       title: "Ticket Management",
@@ -111,8 +112,7 @@ const Services = () => {
           viewBox="0 0 16 16"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm0 1a7 7 0 1 1 0 14A7 7 0 0 1 8 1z" />
-          <path d="M10 4a1 1 0 0 0-1 1v1H7V5a1 1 0 0 0-2 0v3a1 1 0 0 0 2 0v-1h2v1a1 1 0 0 0 2 0V5a1 1 0 0 0-1-1z" />
+  <path d="M3 3h18v18H3V3zm2 2v14h14V5H5zm2 2h10v2H7V7zm0 4h10v2H7v-2zm0 4h10v2H7v-2z" fill="currentColor"/>
         </svg>
       ),
       title: "Ticket Scanner Management",

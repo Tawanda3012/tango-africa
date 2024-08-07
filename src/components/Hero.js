@@ -12,6 +12,7 @@ const Hero = () => {
               Discover events near you{" "}
               <span className="text-[#147481]">right now</span>
             </h1>
+            <p className="mb-3">need to add text</p>
             <div className="flex flex-col items-center justify-center space-y-4 sm:flex-row lg:justify-start sm:space-y-0 sm:space-x-4">
               <a href="https://play.google.com/store/apps/details?id=zw.co.tango.tango" target="_blank" rel="noopener">
                 <img
