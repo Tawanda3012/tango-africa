@@ -9,7 +9,7 @@ import Footer from "../components/Footer";
 
 function Organisers() {
   return (
-    <div className="mt-20 overflow-x-hidden lg:px-40 " >
+    <div className="mt-0 overflow-x-hidden lg:px-40 sm:mt-20 " >
       <Orgpages />
       <Services/>
       <Partners/>
