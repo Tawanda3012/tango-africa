@@ -1,3 +1,4 @@
+// Header.js
 import React, { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 
@@ -23,7 +24,7 @@ const Header = () => {
     { name: 'Events', path: '#trending-events' },
     { name: 'Features', path: '#features' },
     { name: 'FAQs', path: '#faq' },
-    { name: 'Contact Us', path: '/contact' },
+    { name: 'Contact Us', path: '#footer' },
     { name: 'Organisers', path: '/organisers' }
   ];
 

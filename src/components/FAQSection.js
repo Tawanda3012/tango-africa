@@ -5,55 +5,7 @@ const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState(null); // State to track which FAQ is open
 
   const faqs = [
-    {
-      question: "What is Tango?",
-      answer: "Tango is a platform that allows you to manage and attend events seamlessly."
-    },
-    {
-      question: "How does Tango work",
-      answer: "You can buy tickets directly through our website or mobile app."
-    },
-    {
-      question: "How do I get started selling tickets?",
-      answer: "Start by creating an organization account. Once that's done, you can create your events and start selling tickets."
-    },
-    {
-      question: "What types of events can I create on Tango?",
-      answer: "Tango supports a wide range of events, including concerts, festivals, conferences, workshops, classes, and more.."
-    },
-    {
-      question: "How much does it cost?",
-      answer: "Tango charges a flat 5% service fee on each ticket sold, unless the event is free, in which case no fee applies."
-    },
-    {
-        question: "Can I pass fees on to attendees??",
-        answer: "Yes, you have the option to pass fees on to attendees by adding them to the ticket price. Alternatively, you can choose to split the service fee with your attendees."
-      },
-    
-      {
-        question: "How do I scan tickets for my event?",
-        answer: "Payments are automatically processed and sent to your local bank account within 48-72 hours."
-      },
-      {
-        question: "Can I scan tickets offline?",
-        answer: "Yes, it is possible to scan tickets offline. However, please note that this functionality is limited to a single scanner device. For multiple scanner devices, an active internet connection is required to ensure seamless operation."
-      },
-      {
-        question: "Can I scan tickets offline??",
-        answer: "Yes, it is possible to scan tickets offline. However, please note that this functionality is limited to a single scanner device. For multiple scanner devices, an active internet connection is required to ensure seamless operation."
-      },
-      {
-        question: "Can I issue refunds for my event?",
-        answer: "Yes, deleting an upcoming event will automatically refund all ticket holders."
-      },
-      {
-        question: "Can I invite guests to my event through Tango Manager?",
-        answer: "Yes, you can invite guests to your event. Simply create your event, add your guests to your contacts and invite them via Broadcasts."
-      },
-      {
-        question: "What should I do if I encounter any technical issues or bugs?",
-        answer: "For technical issues, bug reports, or feature requests, please use the 'Feedback' feature in the Tango Manager app."
-      },
+    // ...
   ];
 
   const toggleFAQ = (index) => {
@@ -66,14 +18,12 @@ const FAQSection = () => {
         Frequently Asked Questions
       </div>
       <div className="px-4 mb-8 text-center description animation active sm:px-10 lg:px-0">
-  Find the answers to the most common questions about our product. Feel free to email us if you still couldn't find what you were looking for.
-</div>
-
-
+        Find the answers to the most common questions about our product. Feel free to email us if you still couldn't find what you were looking for.
+      </div>
 
       <div className="grid w-full gap-3 p-4 sm:px-20">
         {faqs.map((faq, index) => (
-          <div key={index} className="border-b active">
+          <div key={index} className="mb-4 border-b active sm:mb-0">
             <h3 className="flex">
               <button
                 type="button"

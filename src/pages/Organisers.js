@@ -17,8 +17,9 @@ function Organisers() {
       <FAQSection/>
       {/* <ContactPage/>
        */}
-       
-       <Footer/>
+        <div id="footer">
+          <Footer />
+        </div>
     </div>
   );
 }
