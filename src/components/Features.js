@@ -73,7 +73,7 @@ const Features = () => {
   ];
 
   return (
-    <section className="py-16 text-black eatures">
+    <section className="py-16 text-black eatures section-features">
       <div className="container px-4 mx-auto features__list">
         <div className="space-y-16">
           {features.map((feature, index) => (

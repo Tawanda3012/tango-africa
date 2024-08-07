@@ -61,7 +61,7 @@ const FAQSection = () => {
   };
 
   return (
-    <section className="py-10 faqs sm:px-5">
+    <section className="py-10 faqs sm:px-5 section-faqs">
       <div className="mb-4 text-2xl font-bold text-center title animation active">
         Frequently Asked Questions
       </div>

@@ -32,7 +32,7 @@ const FAQ = () => {
   };
 
   return (
-    <section className="my-20 faq sm:px-5">
+    <section className="my-20 faq sm:px-5 section-faqs ">
       <div className="mb-4 text-2xl font-bold text-center title animation active">
         Frequently Asked Questions
       </div>
