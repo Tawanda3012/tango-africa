@@ -49,13 +49,16 @@ const Header = () => {
         <nav className="flex flex-col p-4 space-y-4 md:flex-row md:space-y-0 md:space-x-4 md:p-0">
           {navItems.map((item, index) => (
             item.name === 'Organisers' && location.pathname === '/organisers' ? (
-              <button
-                key={index}
-                className="bg-[#147481] text-white px-4 py-2 rounded hover:bg-[#106370] transition-colors duration-300"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Get Started
-              </button>
+              <a
+              key={index}
+              href="https://app.tango.co.zw/" 
+              target="_blank" // Opens in a new tab
+              rel="noopener noreferrer" // Security best practice
+              className="bg-[#147481] text-white px-4 py-2 rounded hover:bg-[#106370] transition-colors duration-300"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Get Started
+            </a>
             ) : (
               <NavLink 
                 key={index} 

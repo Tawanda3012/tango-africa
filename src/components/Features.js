@@ -26,7 +26,7 @@ const Feature = ({ image, title, description, index }) => (
         <img 
           src={image} 
           alt="" 
-          className="absolute bottom-0 left-[50%] transform -translate-x-1/2 h-full object-cover transition-transform duration-300 group-hover:scale-105 z-20"
+          className="absolute bottom-0 z-20 object-cover h-full transition-transform duration-300 transform -translate-x-1/2 left-1/2 group-hover:scale-105"
         />
       </div>
     </div>
