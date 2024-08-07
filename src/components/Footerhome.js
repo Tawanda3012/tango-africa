@@ -91,13 +91,14 @@ const Footerhome = () => {
             <div className="order-2 mb-4 sm:mb-0 sm:order-1">
               <p className="text-sm text-center text-gray-600">© Tango All Rights Reserved</p>
             </div>
-            <div className="order-1 mb-4 sm:mb-0 sm:order-2">
-              <img
-                src="https://assets.seedprod.com/5259-VBYtGEaoyJRmqnLj.png"
-                alt="Logo"
-                className="h-6 mx-auto"
-              />
-            </div>
+            <div className="flex justify-center mt-4 space-x-4">
+            <a href="docs.google.com/document/d/e/2PACX-1vTJGKgeHaKgtliZDbiQ3sSB0P4fllcmZYzZJhBmhTj5FI-eZiKtkPebu2gWp7BeNLPxAg6BmvqOX1q-/pub" className="text-sm text-gray-600 hover:text-[#147481] transition-colors duration-300">
+              Privacy Policy
+            </a>
+            <a href="docs.google.com/document/d/e/2PACX-1vTJGKgeHaKgtliZDbiQ3sSB0P4fllcmZYzZJhBmhTj5FI-eZiKtkPebu2gWp7BeNLPxAg6BmvqOX1q-/pub" className="text-sm text-gray-600 hover:text-[#147481] transition-colors duration-300">
+              Terms & Conditions
+            </a>
+          </div>
             <div className="flex justify-center order-3 mb-4 sm:mb-0">
               <a href="#" target="_blank" rel="noopener noreferrer" className="mx-2">
                 <FontAwesomeIcon icon={faFacebookF} className="text-xl text-blue-600 hover:text-blue-700" />
@@ -113,14 +114,7 @@ const Footerhome = () => {
               </a>
             </div>
           </div>
-          <div className="flex justify-center mt-4 space-x-4">
-            <a href="docs.google.com/document/d/e/2PACX-1vTJGKgeHaKgtliZDbiQ3sSB0P4fllcmZYzZJhBmhTj5FI-eZiKtkPebu2gWp7BeNLPxAg6BmvqOX1q-/pub" className="text-sm text-gray-600 hover:text-[#147481] transition-colors duration-300">
-              Privacy Policy
-            </a>
-            <a href="docs.google.com/document/d/e/2PACX-1vTJGKgeHaKgtliZDbiQ3sSB0P4fllcmZYzZJhBmhTj5FI-eZiKtkPebu2gWp7BeNLPxAg6BmvqOX1q-/pub" className="text-sm text-gray-600 hover:text-[#147481] transition-colors duration-300">
-              Terms & Conditions
-            </a>
-          </div>
+         
         </div>
       </div>
     </footer>
