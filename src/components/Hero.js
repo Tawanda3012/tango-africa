@@ -8,7 +8,7 @@ const Hero = () => {
       <div className="flex items-center justify-center flex-grow">
         <div className="flex flex-col items-center justify-between w-full px-4 mx-auto max-w-7xl lg:flex-row">
           <div className="w-full mb-8 lg:w-1/2 lg:mb-0">
-            <h1 className="mt-20 mb-8 text-4xl text-center lg:text-8xl lg:text-left sm:mt-0">
+            <h1 className="mt-20 mb-8 text-4xl font-bold text-center lg:text-8xl lg:text-left sm:mt-0">
             Find More Of The Events{" "}
               <span className="text-[#147481]">You Love</span>
             </h1>
