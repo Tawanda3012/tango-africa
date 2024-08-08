@@ -27,7 +27,7 @@ const Services = () => {
       ),
       title: "Analytics",
       content:
-        "Gain deep insights into your event performance with our advanced analytics. Track attendee behavior, measure engagement, and optimize your events for maximum impact.",
+        "Gain deep insights into your event performance with our advanced analytics. Track everything from ticket sales and revenue to event views and attendee demographics. Stay on top of the action as it happens.",
     },
     {
       icon: (
@@ -44,7 +44,7 @@ const Services = () => {
       ),
       title: "Announcements",
       content:
-        "Make important announcements and updates instantly. Reach attendees directly with timely notifications, ensuring no one misses out on the action.",
+        "Promoting your event is a breeze with Tango Broadcasts. Effortlessly send invites to your contacts, followers, or attendees from previous events. Reach your audience quickly and efficiently, making event promotion simpler than ever.",
     },
     {
       icon: (
@@ -64,7 +64,7 @@ const Services = () => {
       ),
       title: "Contact Book",
       content:
-        "Manage your contacts effortlessly. Store essential information and reach out to attendees with ease.",
+        "Effortlessly manage and organize your contacts for quick, efficient invitations. Whether you're hosting a small gathering or a large event, promoting your event has never been easier.",
     },
 
     {
@@ -83,7 +83,7 @@ const Services = () => {
       ),
       title: "Payments",
       content:
-        "Securely process payments with ease. Simplify transactions and ensure a smooth payment experience for your attendees.",
+        "Your ticket earnings are automatically deposited into your bank account within 48 hours of your event's conclusion, ensuring quick and secure access to your funds.",
     },
     {
       icon: (
@@ -100,7 +100,7 @@ const Services = () => {
       ),
       title: "Ticket Management",
       content:
-        "Easily manage tickets for your events. Track sales, check-ins, and ensure a seamless entry experience for attendees.",
+        "Tango supports a variety of ticket types, from early bird, donations, members-only tickets, and multi-pass tickets. Whether you are having a special event, organizing a fundraiser, or hosting a series of workshops, Tango has flexible ticketing solutions to meet your needs. Choose the type that best fits your event's goals and audience, and let Tango handle the rest.",
     },
     {
       icon: (
@@ -112,12 +112,12 @@ const Services = () => {
           viewBox="0 0 16 16"
           xmlns="http://www.w3.org/2000/svg"
         >
-  <path d="M3 3h18v18H3V3zm2 2v14h14V5H5zm2 2h10v2H7V7zm0 4h10v2H7v-2zm0 4h10v2H7v-2z" fill="currentColor"/>
+   <path d="M3 3h18v18H3V3zm2 2v14h14V5H5zm2 2h2v2H7V7zm0 4h2v2H7v-2zm0 4h2v2H7v-2zm4-8h2v2h-2V7zm0 4h2v2h-2v-2zm0 4h2v2h-2v-2zm4-8h2v2h-2V7zm0 4h2v2h-2v-2zm0 4h2v2h-2v-2z" fill="currentColor"/>
         </svg>
       ),
       title: "Ticket Scanner Management",
       content:
-        "Streamline your entry process with ticket scanning. Quickly verify attendees and enhance event security.",
+        "Streamline check-ins with our mobile-friendly ticket scanner app. Enjoy faster processing, shorter wait times, and an improved experience for your attendees",
     },
   ];
 
@@ -126,15 +126,7 @@ const Services = () => {
       <div className="container px-4 mx-auto">
         <h2 className="mb-4 text-3xl font-bold ">What we offer</h2>
         <p className="mb-20 ">
-          Organize, and promote events effortlessly with the Tango Manager app.
-          Whether you're a professional event organizer or someone planning a
-          small gathering, our user-friendly app provides all the tools you need
-          to create, list, and promote your events with ease. From conferences
-          and concerts to workshops and parties, our app empowers event
-          organizers to reach a wider audience, manage registrations, and
-          enhance attendee engagement. Seamlessly navigate through event
-          schedules, access detailed analytics, and stay updated with real-time
-          notifications. Creating memorable experiences has never been easier.
+        Organize and promote events effortlessly with the Tango Manager app. Whether you're a professional event organizer or just planning a small gathering, our user-friendly web app offers everything you need to create, list, and promote your events with ease. From conferences and concerts to workshops and parties, Tango Manager helps you reach a broader audience, manage registrations, and boost attendee engagement. Creating memorable experiences has never been easier.
         </p>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (

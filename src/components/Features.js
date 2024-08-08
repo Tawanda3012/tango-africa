@@ -2,9 +2,10 @@ import React from 'react';
 import { motion } from 'framer-motion'; 
 import image1 from '../images/removed.jpeg.png'; 
 import events from '../images/events.png';
-import trend from '../images/trend.png';
+// import trend from '../images/trend.png';
 import search from '../images/search.png';
 import mobi from '../images/mobi.png';
+import scanner from '../images/scanner.png'
 
 const Feature = ({ image, title, description, index }) => (
   <motion.div
@@ -45,28 +46,28 @@ const Features = () => {
   const features = [
     {
       image: mobi,
-      title: "Don't miss out on any events that others also want to attend",
-      description: "Stay updated on the events that others want to attend as well. We will show you all the hottest events that are coming up."
+      title: "Your personal guide to thrilling events in your area",
+      description: "Uncover events that match your passions and interests. From thrilling concerts to insightful talks. Let Tango be your compass to the vibrant world of entertainment and culture in your area"
     },
     {
-      image: trend,
-      title: "Find out more about the event",
-      description: "You have the luxury of checking whether this event is really for you or not. After that, it is anyone's guess."
+      image:events,
+      title: "Personalized experiences, just for you",
+      description: "Handpick the events you want to see, from concerts and festivals to conferences and workshops. With the Tango mobile app, you get to create the perfect event experience tailored to your interests and preferences."
     },
     {
       image: search,
-      title: "Keep tickets with ease everywhere and anywhere",
-      description: "Have as many tickets as you want, for however many events you want with you always. Digital tickets make it easy to go around. Bonus, they don't get misplaced."
+      title: "Seek and You Shall Find",
+      description: "⁠Whether you're a music enthusiast, art lover, foodie, or adventure seeker, Tango will help you find the perfect event, be it just for you, your partner or the entire family. There’s always something to look forward to."
     },
     {
-      image: events,
-      title: "Categorisation that makes it easy to find events",
-      description: "Choose an event from the wide variety of categories. Don't waste time, just look through your event type."
+      image: scanner,
+      title: "Your Phone, Your Ticket",
+      description: "14. Transform your smartphone into an all-access pass for your favorite events. Effortless entry, paperless convenience. Experience the next generation of ticketing with the Tango mobile app."
     },
     {
       image: image1,
-      title: "You are the master of your interests",
-      description: "Tailor your event to you. Tell Tango what you're into and let us do all the work."
+      title: "Notifications that keep you in the loop",
+      description: "Receive timely updates and alerts so you're always informed about the latest events, changes, and opportunities. With notifications that keep you in the loop, you’ll never miss a beat."
     }
   ];
 

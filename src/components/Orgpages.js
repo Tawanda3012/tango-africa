@@ -8,7 +8,7 @@ function Orgpages() {
         <div className="flex flex-col items-center justify-between lg:flex-row">
           <div className="w-full mb-8 lg:w-1/2 lg:mb-0">
             <h1 className="mb-4 text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
-              Transform Your Events with
+              Elevate Your event Management with
               <span className="block text-[#147481]">Tango Manager</span>
             </h1>
             <p className="mb-6 text-lg text-gray-600">

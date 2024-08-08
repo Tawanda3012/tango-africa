@@ -1,5 +1,5 @@
 import React from "react";
-import img from "../images/removed.jpeg.png";
+import img from "../images/mobi.png";
 
 const Hero = () => {
   return (
@@ -9,10 +9,11 @@ const Hero = () => {
         <div className="flex flex-col items-center justify-between w-full px-4 mx-auto max-w-7xl lg:flex-row">
           <div className="w-full mb-8 lg:w-1/2 lg:mb-0">
             <h1 className="mt-20 mb-8 text-4xl text-center lg:text-8xl lg:text-left sm:mt-0">
-              Discover events near you{" "}
-              <span className="text-[#147481]">right now</span>
+            Find More Of The Events{" "}
+              <span className="text-[#147481]">You Love</span>
             </h1>
-            <p className="mb-3">need to add text</p>
+            <p className="mb-3 text-2xl"> Your gatewayto amazing local events </p>
+            
             <div className="flex flex-col items-center justify-center space-y-4 sm:flex-row lg:justify-start sm:space-y-0 sm:space-x-4">
               <a href="https://play.google.com/store/apps/details?id=zw.co.tango.tango" target="_blank" rel="noopener">
                 <img
