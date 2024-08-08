@@ -1,10 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion'; 
-import image1 from '../images/removed.jpeg.png'; 
+import image1 from '../images/road.png'; 
 import events from '../images/events.png';
 // import trend from '../images/trend.png';
 import search from '../images/search.png';
-import mobi from '../images/mobi.png';
+import mobi from '../images/matobo.png';
 import scanner from '../images/scanner.png'
 
 const Feature = ({ image, title, description, index }) => (
