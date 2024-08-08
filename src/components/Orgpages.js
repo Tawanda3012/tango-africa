@@ -1,5 +1,5 @@
 import React from "react";
-import img from "../images/interface--qVfg3xy.jpg";
+import img from "../images/buz1.jpeg";
 
 function Orgpages() {
   return (
