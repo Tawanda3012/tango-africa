@@ -12,7 +12,7 @@ const Hero = () => {
             Find More Of The Events{" "}
               <span className="text-[#147481]">You Love</span>
             </h1>
-            <p className="mb-3 text-2xl"> Your gatewayto amazing local events </p>
+            <p className="mb-8 text-2xl text-center lg:text-left lg:mb-3"> Your gatewayto amazing local events </p>
             
             <div className="flex flex-col items-center justify-center space-y-4 sm:flex-row lg:justify-start sm:space-y-0 sm:space-x-4">
               <a href="https://play.google.com/store/apps/details?id=zw.co.tango.tango" target="_blank" rel="noopener">
@@ -31,7 +31,7 @@ const Hero = () => {
               </a>
             </div>
           </div>
-          <div className="flex items-center justify-center w-full lg:w-1/2">
+          <div className="flex items-center justify-center w-full lg:w-1/2 ">
             <img
               src={img}
               alt="Event App Screenshot"

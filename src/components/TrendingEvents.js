@@ -103,7 +103,7 @@ const TrendingEvents = () => {
   };
 
   return (
-    <section className="py-8 my-20 trending">
+    <section className="py-8 mb-20 mt-60 trending lg:mt-5 lg:mb-3">
       <div className="container mx-auto">
         <h2 className="mb-6 text-2xl font-bold title">Events</h2>
         <div className="trending__slider">
