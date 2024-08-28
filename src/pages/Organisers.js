@@ -6,6 +6,7 @@ import FAQSection from "../components/FAQSection";
 // import ContactPage from "../components/ContactPage";
 // import ScannerSection from "../components/ScannerSection";
 import Footer from "../components/Footer";
+import ROIStats from "../components/ROIStats";
 
 function Organisers() {
   return (
@@ -14,6 +15,7 @@ function Organisers() {
       <Services/>
       <Partners/>
       {/* <ScannerSection/> */}
+      <ROIStats/>
       <FAQSection/>
       {/* <ContactPage/>
        */}
