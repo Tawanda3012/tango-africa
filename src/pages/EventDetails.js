@@ -78,7 +78,7 @@ const EventDetails = () => {
                 href={event.event_url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block w-full py-3 mb-4 text-center text-white bg-orange-500 rounded hover:bg-orange-600"
+                className="block w-full py-3 mb-4 text-center text-white bg-[#147481] rounded hover:bg-orange-600"
               >
                 Get Tickets
               </a>
