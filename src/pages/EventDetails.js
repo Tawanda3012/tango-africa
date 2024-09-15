@@ -43,10 +43,10 @@ const EventDetails = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <header className="bg-white border-b border-gray-200">
+      <header className="flex items-center justify-center mt-20 text-center bg-white border-b border-gray-200">
         <div className="container px-4 py-4 mx-auto">
           <h1 className="text-2xl font-bold text-gray-800">{event.name}</h1>
-          <p className="text-sm text-gray-600">by {event.organizer_name}</p>
+          <p className="text-sm text-gray-600"> {event.organizer_name}</p>
         </div>
       </header>
 
