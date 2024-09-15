@@ -54,7 +54,7 @@ const EventDetails = () => {
       <img
               src={event.poster_url || "/default-image-url.jpg"}
               alt={event.name}
-              className="w-full mb-6 rounded-lg shadow-md"
+              className="w-[1200px] mb-6 rounded-lg shadow-md"
             />
         <div className="flex flex-col lg:flex-row lg:space-x-8">
           <div className="lg:w-2/3">
