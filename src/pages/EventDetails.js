@@ -37,7 +37,7 @@ const EventDetails = () => {
     }
   };
 
-  if (loading) return <div className="flex items-center justify-center min-h-screen">Loading...</div>;
+  if (loading) return <div className="items-center justify-center min-h-screen ">Loading...</div>;
   if (error) return <div className="flex items-center justify-center min-h-screen text-red-500">Error: {error}</div>;
   if (!event) return <div className="flex items-center justify-center min-h-screen">No event found</div>;
 
@@ -51,13 +51,14 @@ const EventDetails = () => {
       </header>
 
       <main className="container px-4 py-8 mx-auto">
-        <div className="flex flex-col lg:flex-row lg:space-x-8">
-          <div className="lg:w-2/3">
-            <img
+      <img
               src={event.poster_url || "/default-image-url.jpg"}
               alt={event.name}
               className="w-full mb-6 rounded-lg shadow-md"
             />
+        <div className="flex flex-col lg:flex-row lg:space-x-8">
+          <div className="lg:w-2/3">
+           
             <div className="p-6 bg-gray-100 rounded-lg">
               <h2 className="mb-4 text-xl font-semibold">About this event</h2>
               <p className="mb-2"><strong>Date and time</strong></p>
