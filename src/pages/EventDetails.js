@@ -54,7 +54,7 @@ const EventDetails = () => {
       <img
               src={event.poster_url || "/default-image-url.jpg"}
               alt={event.name}
-              className="w-[1200px] mb-6 rounded-lg shadow-md"
+              className="w-[1200px] mb-6 rounded-lg shadow-md h-[400px]"
             />
         <div className="flex flex-col lg:flex-row lg:space-x-8">
           <div className="lg:w-2/3">
@@ -62,6 +62,9 @@ const EventDetails = () => {
             <div className="p-6 bg-gray-100 rounded-lg">
               <h2 className="mb-4 text-xl font-semibold">About this event</h2>
               <p className="mb-2"><strong>Date and time</strong></p>
+              <p className="mb-4 text-sm text-gray-600">
+                {new Date(event.date).toLocaleDateString()} at {event.date}
+              </p>
               <p className="mb-4 text-sm text-gray-600">
                 {new Date(event.date).toLocaleDateString()} at {event.time}
               </p>
