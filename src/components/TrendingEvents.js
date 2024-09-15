@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { createClient } from '@supabase/supabase-js';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -11,7 +12,7 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 
 const EventCard = ({ event }) => (
   <div className="px-2 card">
-    <a href={event.event_url} target="_blank" rel="noopener noreferrer" className="block">
+    <Link to={`/event/${event.id}`} className="block">
       <div className="card__thumb">
         <img 
           src={event.poster_url || 'default-image-url.jpg'} 
@@ -38,7 +39,7 @@ const EventCard = ({ event }) => (
           </p>
         </div>
       </div>
-    </a>
+    </Link>
   </div>
 );
 
