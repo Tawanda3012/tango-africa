@@ -42,44 +42,57 @@ const EventDetails = () => {
   if (!event) return <div className="flex items-center justify-center min-h-screen">No event found</div>;
 
   return (
-    <div className="bg-gray-100 ">
-      <main className="container px-4 py-8 mx-auto mt-8 sm:px-6 lg:px-8">
-        <h1 className="mb-6 text-3xl font-bold text-center sm:text-4xl lg:text-5xl">{event.name}</h1>
-        <div className="overflow-hidden bg-white rounded-lg shadow">
-          <div className="sm:flex">
-            <div className="sm:w-1/2">
-              <img
-                src={event.poster_url || "/default-image-url.jpg"}
-                alt={event.name}
-                className="object-cover w-full h-64 sm:h-full"
-              />
+    <div className="min-h-screen bg-white">
+      <header className="bg-white border-b border-gray-200">
+        <div className="container px-4 py-4 mx-auto">
+          <h1 className="text-2xl font-bold text-gray-800">{event.name}</h1>
+          <p className="text-sm text-gray-600">by {event.organizer_name}</p>
+        </div>
+      </header>
+
+      <main className="container px-4 py-8 mx-auto">
+        <div className="flex flex-col lg:flex-row lg:space-x-8">
+          <div className="lg:w-2/3">
+            <img
+              src={event.poster_url || "/default-image-url.jpg"}
+              alt={event.name}
+              className="w-full mb-6 rounded-lg shadow-md"
+            />
+            <div className="p-6 bg-gray-100 rounded-lg">
+              <h2 className="mb-4 text-xl font-semibold">About this event</h2>
+              <p className="mb-2"><strong>Date and time</strong></p>
+              <p className="mb-4 text-sm text-gray-600">
+                {new Date(event.date).toLocaleDateString()} at {event.time}
+              </p>
+              <p className="mb-2"><strong>Location</strong></p>
+              <p className="mb-4 text-sm text-gray-600">{event.venue}, {event.address}</p>
+              <h3 className="mb-2 font-semibold">Description</h3>
+              <p className="text-sm text-gray-700">{event.description}</p>
             </div>
-            <div className="p-6 sm:w-1/2 sm:p-8">
-              <h2 className="mb-4 text-2xl font-semibold">Event Details</h2>
-              <p className="mb-2"><strong>Date:</strong> {new Date(event.date).toLocaleDateString()}</p>
-              <p className="mb-2"><strong>Time:</strong> {event.time}</p>
-              <p className="mb-2"><strong>Venue:</strong> {event.venue}</p>
-              <p className="mb-2"><strong>Address:</strong> {event.address}</p>
-              <p className="mb-4"><strong>Description:</strong> {event.description}</p>
+          </div>
+
+          <div className="mt-8 lg:w-1/3 lg:mt-0">
+            <div className="sticky p-6 bg-white border border-gray-200 rounded-lg shadow-sm top-8">
+              <p className="mb-4 text-2xl font-bold">${event.price || 'Free'}</p>
               <a
                 href={event.event_url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block px-6 py-3 text-white transition duration-300 bg-blue-500 rounded hover:bg-blue-600"
+                className="block w-full py-3 mb-4 text-center text-white bg-orange-500 rounded hover:bg-orange-600"
               >
                 Get Tickets
               </a>
+              <div className="p-4 bg-gray-100 rounded">
+                <h3 className="mb-2 font-semibold">Organizer contact</h3>
+                <p className="text-sm text-gray-600">{event.organizer_email}</p>
+                <p className="text-sm text-gray-600">{event.organizer_phone}</p>
+              </div>
             </div>
-          </div>
-          <div className="p-6 bg-gray-50 sm:p-8">
-            <h2 className="mb-4 text-2xl font-semibold">Organizer</h2>
-            <p className="mb-2"><strong>Name:</strong> {event.organizer_name}</p>
-            <p className="mb-2"><strong>Email:</strong> {event.organizer_email}</p>
-            <p className="mb-2"><strong>Phone:</strong> {event.organizer_phone}</p>
           </div>
         </div>
       </main>
-      <footer>
+
+      <footer className="mt-12 border-t border-gray-200">
         <Footerhome />
       </footer>
     </div>
