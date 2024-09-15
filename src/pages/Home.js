@@ -5,6 +5,8 @@ import Features from '../components/Features';
 import FAQ from '../components/FAQ';
 import Footerhome from '../components/Footerhome';
 
+
+
 function Home() {
   return (
     <div className='overflow-x-auto bg-gray-100'>

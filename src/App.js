@@ -6,6 +6,7 @@ import Organisers from './pages/Organisers';
 import PaymentSuccessPage from './components/PaymentSuccessPage';
 import  EventDetails from './pages/EventDetails'
 
+
 function App() {
   return (
     <Router>
@@ -16,6 +17,7 @@ function App() {
         <Route path="/payment-success" element={<PaymentSuccessPage />} />
         <Route path="/event/:id" element={<EventDetails />} />
       </Routes>
+
     </Router>
   );
 }
