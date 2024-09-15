@@ -63,7 +63,7 @@ const EventDetails = () => {
               <h2 className="mb-4 text-xl font-semibold">About this event</h2>
               <p className="mb-2"><strong>Date and time</strong></p>
               <p className="mb-4 text-sm text-gray-600">
-                {new Date(event.date).toLocaleDateString()} at {event.date}
+                {new Date(event.date).toLocaleDateString()} at {event.start_time}
               </p>
               <p className="mb-4 text-sm text-gray-600">
                 {new Date(event.date).toLocaleDateString()} at {event.time}
