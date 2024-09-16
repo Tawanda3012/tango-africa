@@ -73,13 +73,15 @@ const EventDetails = () => {
       </header>
 
       <main className="container px-4 py-8 mx-auto">
-        <div className="w-full max-w-[1200px] mb-6">
-          <div className="relative w-full pb-[33.33%] rounded-lg shadow-md overflow-hidden">
+        <div className="w-full max-w-[1200px] mb-6 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 p-1 rounded-lg">
+          <div className="relative w-full pb-[33.33%] rounded-lg shadow-md overflow-hidden bg-white">
             <img
               src={event.poster_url || "/default-image-url.jpg"}
               alt={event.name}
-              className="absolute top-0 left-0 object-contain w-full h-full"
+              className="absolute top-0 left-0 object-cover w-full h-full"
             />
+            <div className="absolute inset-0 opacity-50 bg-gradient-to-br from-blue-900 via-teal-800 to-teal-600"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
           </div>
         </div>
         <div className="flex flex-col lg:flex-row lg:space-x-8">
