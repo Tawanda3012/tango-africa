@@ -48,6 +48,13 @@ const EventDetails = () => {
     }
   };
 
+  const scrollToFooter = () => {
+    const footer = document.getElementById('event-footer');
+    if (footer) {
+      footer.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   if (loading) return (
     <div className="flex items-center justify-center min-h-screen">
       <div className="w-16 h-16 border-4 border-blue-500 rounded-full border-t-transparent animate-spin"></div>
@@ -104,14 +111,12 @@ const EventDetails = () => {
                   <p className="text-2xl font-bold">${ticket.price || 'Free'}</p>
                 </div>
               ))}
-              <a
-                href={event.event_url}
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={scrollToFooter}
                 className="block w-full py-3 mt-4 text-center text-white bg-[#147481] rounded hover:bg-orange-600"
               >
                 Get tickets on the application
-              </a>
+              </button>
               <div className="p-4 mt-4 bg-gray-100 rounded">
                 <h3 className="mb-2 font-semibold">Organizer contact</h3>
                 <p className="text-sm text-gray-600">{event.organizer_email}</p>
@@ -122,7 +127,7 @@ const EventDetails = () => {
         </div>
       </main>
 
-      <footer className="mt-12 border-t border-gray-200">
+      <footer id="event-footer" className="mt-12 border-t border-gray-200">
         <Footerhome />
       </footer>
     </div>
