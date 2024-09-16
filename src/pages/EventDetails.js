@@ -56,7 +56,7 @@ const EventDetails = () => {
     <img
       src={event.poster_url || "/default-image-url.jpg"}
       alt={event.name}
-      className="absolute top-0 left-0 w-full h-full object-contain"
+      className="absolute top-0 left-0 object-contain w-full h-full"
     />
   </div>
 </div>
@@ -77,7 +77,7 @@ const EventDetails = () => {
             </div>
           </div>
 
-          <div className="mt-8 lg:mt-0 w-[340px]">
+          <div className="mt-8 lg:mt-0 md:w-[340px]">
             <div className="sticky p-6 bg-white border border-gray-200 rounded-lg shadow-sm top-8">
               <p className="mb-4 text-2xl font-bold">${event.price || 'Free'}</p>
               <a
