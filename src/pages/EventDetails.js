@@ -51,12 +51,14 @@ const EventDetails = () => {
       </header>
 
       <main className="container px-4 py-8 mx-auto">
-      <div className="w-full h-[500px] mb-6 overflow-hidden rounded-lg shadow-md">
-  <img
-    src={event.poster_url || "/default-image-url.jpg"}
-    alt={event.name}
-    className="w-full h-full object-cover object-center"
-  />
+      <div className="w-full max-w-[1200px] mb-6">
+  <div className="relative w-full pb-[33.33%] rounded-lg shadow-md overflow-hidden">
+    <img
+      src={event.poster_url || "/default-image-url.jpg"}
+      alt={event.name}
+      className="absolute top-0 left-0 w-full h-full object-contain"
+    />
+  </div>
 </div>
         <div className="flex flex-col lg:flex-row lg:space-x-8">
           <div className="lg:w-2/3">
