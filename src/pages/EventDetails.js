@@ -57,7 +57,7 @@ const EventDetails = () => {
 
   if (loading) return (
     <div className="flex items-center justify-center min-h-screen">
-      <div className="w-16 h-16 border-4 border-blue-500 rounded-full border-t-transparent animate-spin"></div>
+      <div className="w-16 h-16 border-4 border-[#147481] rounded-full border-t-transparent animate-spin"></div>
     </div>
   );
   
@@ -98,10 +98,7 @@ const EventDetails = () => {
               <p className="text-sm text-gray-700">{event.description}</p>
             </div>
 
-            <div className="p-6 mt-8 bg-gray-100 rounded-lg">
-              <h2 className="mb-4 text-xl font-semibold">Organization</h2>
-              {organization && <p className="mb-2">{organization.name}</p>}
-            </div>
+            
           </div>
 
           <div className="mt-8 lg:mt-0 md:w-[340px]">
@@ -120,9 +117,10 @@ const EventDetails = () => {
                 Get tickets on the application
               </button>
               <div className="p-4 mt-4 bg-gray-100 rounded">
-                <h3 className="mb-2 font-semibold">Organizer contact</h3>
-                <p className="text-sm text-gray-600">{event.organizer_email}</p>
-                <p className="text-sm text-gray-600">{event.organizer_phone}</p>
+              
+              <h2 className="mb-4 text-xl font-semibold">Organization</h2>
+              {organization && <p className="mb-2">{organization.name}</p>}
+          
               </div>
             </div>
           </div>
