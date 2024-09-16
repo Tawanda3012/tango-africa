@@ -43,8 +43,18 @@ const EventCard = ({ event }) => (
   </div>
 );
 
+const SkeletonLoader = () => (
+  <div className="px-2 card animate-pulse">
+    <div className="h-48 mb-4 bg-gray-300 rounded-lg"></div>
+    <div className="w-3/4 h-4 mb-2 bg-gray-300 rounded"></div>
+    <div className="w-1/2 h-4 mb-2 bg-gray-300 rounded"></div>
+    <div className="w-1/4 h-4 bg-gray-300 rounded"></div>
+  </div>
+);
+
 const TrendingEvents = () => {
   const [events, setEvents] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetchEvents();
@@ -52,6 +62,7 @@ const TrendingEvents = () => {
 
   const fetchEvents = async () => {
     try {
+      setLoading(true);
       const { data, error } = await supabase
         .from('events')
         .select('*')
@@ -60,13 +71,15 @@ const TrendingEvents = () => {
 
       if (error) {
         console.error('Error fetching events:', error.message);
-        return; // Exit if there's an error
+        return;
       }
 
       console.log('Fetched events:', data);
       setEvents(data);
     } catch (error) {
       console.error('Unexpected error:', error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -74,8 +87,8 @@ const TrendingEvents = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    autoplay: true, // Enable autoplay
-    autoplaySpeed: 1500, // Set the speed for autoplay (in milliseconds)
+    autoplay: true,
+    autoplaySpeed: 1500,
     slidesToShow: 3,
     slidesToScroll: 1,
     responsive: [
@@ -109,9 +122,10 @@ const TrendingEvents = () => {
         <h2 className="mb-6 text-2xl font-bold title">Events</h2>
         <div className="trending__slider">
           <Slider {...settings}>
-            {events.map((event) => (
-              <EventCard key={event.id} event={event} />
-            ))}
+            {loading
+              ? Array(4).fill().map((_, index) => <SkeletonLoader key={index} />)
+              : events.map((event) => <EventCard key={event.id} event={event} />)
+            }
           </Slider>
         </div>
       </div>

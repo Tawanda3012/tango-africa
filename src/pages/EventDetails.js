@@ -9,6 +9,8 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 
 const EventDetails = () => {
   const [event, setEvent] = useState(null);
+  const [tickets, setTickets] = useState([]);
+  const [organization, setOrganization] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const { id } = useParams();
@@ -20,15 +22,24 @@ const EventDetails = () => {
   const fetchEventDetails = async () => {
     try {
       setLoading(true);
-      const { data, error } = await supabase
+      const { data: eventData, error: eventError } = await supabase
         .from("events")
-        .select("*")
+        .select("*, organizations(name)")
         .eq("id", id)
         .single();
 
-      if (error) throw error;
+      if (eventError) throw eventError;
 
-      setEvent(data);
+      const { data: ticketsData, error: ticketsError } = await supabase
+        .from("tickets")
+        .select("name, price")
+        .eq("event_id", id);
+
+      if (ticketsError) throw ticketsError;
+
+      setEvent(eventData);
+      setTickets(ticketsData);
+      setOrganization(eventData.organizations);
     } catch (error) {
       console.error("Error fetching event details:", error.message);
       setError(error.message);
@@ -37,7 +48,12 @@ const EventDetails = () => {
     }
   };
 
-  if (loading) return <div className="items-center justify-center min-h-screen ">Loading...</div>;
+  if (loading) return (
+    <div className="flex items-center justify-center min-h-screen">
+      <div className="w-16 h-16 border-4 border-blue-500 rounded-full border-t-transparent animate-spin"></div>
+    </div>
+  );
+  
   if (error) return <div className="flex items-center justify-center min-h-screen text-red-500">Error: {error}</div>;
   if (!event) return <div className="flex items-center justify-center min-h-screen">No event found</div>;
 
@@ -46,49 +62,57 @@ const EventDetails = () => {
       <header className="flex items-center justify-center mt-20 text-center bg-white border-b border-gray-200">
         <div className="container px-4 py-4 mx-auto">
           <h1 className="text-2xl font-bold text-gray-800">{event.name}</h1>
-          <p className="text-sm text-gray-600"> {event.organizer_name}</p>
         </div>
       </header>
 
       <main className="container px-4 py-8 mx-auto">
-      <div className="w-full max-w-[1200px] mb-6">
-  <div className="relative w-full pb-[33.33%] rounded-lg shadow-md overflow-hidden">
-    <img
-      src={event.poster_url || "/default-image-url.jpg"}
-      alt={event.name}
-      className="absolute top-0 left-0 object-contain w-full h-full"
-    />
-  </div>
-</div>
+        <div className="w-full max-w-[1200px] mb-6">
+          <div className="relative w-full pb-[33.33%] rounded-lg shadow-md overflow-hidden">
+            <img
+              src={event.poster_url || "/default-image-url.jpg"}
+              alt={event.name}
+              className="absolute top-0 left-0 object-contain w-full h-full"
+            />
+          </div>
+        </div>
         <div className="flex flex-col lg:flex-row lg:space-x-8">
           <div className="lg:w-2/3">
-           
             <div className="p-6 bg-gray-100 rounded-lg">
               <h2 className="mb-4 text-xl font-semibold">About this event</h2>
               <p className="mb-2"><strong>Date and time</strong></p>
               <p className="mb-4 text-sm text-gray-600">
-                {new Date(event.start_time).toLocaleDateString()} at {event.start_time}
+                {new Date(event.start_time).toLocaleDateString()} at {new Date(event.start_time).toLocaleTimeString()}
               </p>
-             
               <p className="mb-2"><strong>Location</strong></p>
               <p className="mb-4 text-sm text-gray-600">{event.venue}, {event.address}</p>
               <h3 className="mb-2 font-semibold">Description</h3>
               <p className="text-sm text-gray-700">{event.description}</p>
             </div>
+
+            <div className="p-6 mt-8 bg-gray-100 rounded-lg">
+              <h2 className="mb-4 text-xl font-semibold">Organization</h2>
+              {organization && <p className="mb-2">{organization.name}</p>}
+            </div>
           </div>
 
           <div className="mt-8 lg:mt-0 md:w-[340px]">
             <div className="sticky p-6 bg-white border border-gray-200 rounded-lg shadow-sm top-8">
-              <p className="mb-4 text-2xl font-bold">${event.price || 'Free'}</p>
+              <h3 className="mb-4 text-xl font-semibold">Tickets</h3>
+              {tickets.map((ticket, index) => (
+                <div key={index} className="mb-4">
+                  <p className="font-semibold">{ticket.name}</p>
+                  <p className="text-2xl font-bold">${ticket.price || 'Free'}</p>
+                </div>
+              ))}
               <a
                 href={event.event_url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block w-full py-3 mb-4 text-center text-white bg-[#147481] rounded hover:bg-orange-600"
+                className="block w-full py-3 mt-4 text-center text-white bg-[#147481] rounded hover:bg-orange-600"
               >
-                Get Tickets
+                Get tickets on the application
               </a>
-              <div className="p-4 bg-gray-100 rounded">
+              <div className="p-4 mt-4 bg-gray-100 rounded">
                 <h3 className="mb-2 font-semibold">Organizer contact</h3>
                 <p className="text-sm text-gray-600">{event.organizer_email}</p>
                 <p className="text-sm text-gray-600">{event.organizer_phone}</p>
