@@ -112,7 +112,7 @@ const EventDetails = () => {
               ))}
               <button
                 onClick={scrollToFooter}
-                className="block w-full py-3 mt-4 text-center text-white bg-[#147481] rounded hover:bg-orange-600"
+                className="block w-full py-3 mt-4 text-center text-white bg-[#147481] rounded hover:bg-white-600"
               >
                 Get tickets on the application
               </button>
