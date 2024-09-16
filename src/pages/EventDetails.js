@@ -51,11 +51,13 @@ const EventDetails = () => {
       </header>
 
       <main className="container px-4 py-8 mx-auto">
-      <img
-              src={event.poster_url || "/default-image-url.jpg"}
-              alt={event.name}
-              className="w-[1200px] mb-6 rounded-lg shadow-md h-[400px]"
-            />
+      <div className="w-full h-[500px] mb-6 overflow-hidden rounded-lg shadow-md">
+  <img
+    src={event.poster_url || "/default-image-url.jpg"}
+    alt={event.name}
+    className="w-full h-full object-cover object-center"
+  />
+</div>
         <div className="flex flex-col lg:flex-row lg:space-x-8">
           <div className="lg:w-2/3">
            
@@ -65,9 +67,7 @@ const EventDetails = () => {
               <p className="mb-4 text-sm text-gray-600">
                 {new Date(event.start_time).toLocaleDateString()} at {event.start_time}
               </p>
-              <p className="mb-4 text-sm text-gray-600">
-                {new Date(event.date).toLocaleDateString()} at {event.time}
-              </p>
+             
               <p className="mb-2"><strong>Location</strong></p>
               <p className="mb-4 text-sm text-gray-600">{event.venue}, {event.address}</p>
               <h3 className="mb-2 font-semibold">Description</h3>
